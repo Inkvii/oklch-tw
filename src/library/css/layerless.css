@@ -1,0 +1,23 @@
+html {
+  font-size: 16px;
+}
+
+:root {
+  --trigger-width: 10rem;
+}
+
+.react-aria-ModalOverlay {
+  @apply fixed left-0 top-0 w-screen h-screen bg-info-600/40;
+}
+
+.react-aria-Modal {
+  @apply w-full h-full child:h-full;
+}
+
+.react-aria-Popover {
+  min-width: var(--trigger-width);
+}
+
+.dark {
+  color-scheme: dark;
+}
