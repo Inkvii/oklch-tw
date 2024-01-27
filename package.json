@@ -37,6 +37,7 @@
     "tailwind-merge": "^2.2.1"
   },
   "devDependencies": {
+    "@csstools/postcss-oklab-function": "^3.0.9",
     "@next/bundle-analyzer": "14.1.0",
     "@react-types/shared": "^3.22.0",
     "@storybook/addon-essentials": "^7.6.10",

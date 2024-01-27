@@ -5,22 +5,45 @@ const plugin = require("tailwindcss/plugin")
 /** @type {import("tailwindcss").Config} */
 const colorsThemePreset = {
   preset: [],
-  darkMode: "class",
+  // darkMode: "class",
   theme: {
     colors: {
       typography: {
+        primary: {
+
+          "50": "oklch(44.18% 0.0444 var(--primary-hue) / <alpha-value>)",
+          "100": "oklch(37.66% 0.0444 var(--primary-hue) / <alpha-value>)",
+          "200": "oklch(30.75% 0.0444 var(--primary-hue) / <alpha-value>)",
+          "300": "oklch(27% 0.0444 var(--primary-hue) / <alpha-value>)",
+          "400": "oklch(24.83% 0.0444 var(--primary-hue) / <alpha-value>)",
+          "500": "oklch(92.61% 0.0436 var(--primary-hue) / <alpha-value>)",
+          "600": "oklch(82.04% 0.1123 var(--primary-hue) / <alpha-value>)",
+          "700": "oklch(72.74% 0.0871 var(--primary-hue) / <alpha-value>)",
+          "800": "oklch(73.4% 0.0871 var(--primary-hue) / <alpha-value>)",
+          "900": "oklch(75.66% 0.0871 var(--primary-hue) / <alpha-value>)",
+          "950":  "oklch(80.1% 0.0871 var(--primary-hue) / <alpha-value>)",
+        },
         body: { DEFAULT: colors.neutral["700"], dark: colors.neutral["200"] },
         header: { DEFAULT: colors.neutral["900"], dark: colors.neutral["50"] },
         caption: { DEFAULT: colors.neutral["500"], dark: colors.neutral["400"] },
       },
       background: {
-        DEFAULT: colors.zinc["100"],
-        dark: colors.zinc["800"],
+        DEFAULT: "oklch(88.2% 0.0363 var(--primary-hue) / <alpha-value>)",
+        dark: "oklch(20% 0.039 var(--primary-hue) / <alpha-value>)",
       },
       neutral: colors.neutral,
       primary: {
-        ...colors.sky,
-        dark: colors.sky,
+        "50":  "oklch(87.32% 0.0776 var(--primary-hue) / <alpha-value>)",
+        "100": "oklch(83.56% 0.0973 var(--primary-hue) / <alpha-value>)",
+        "200": "oklch(80.01% 0.1254 var(--primary-hue) / <alpha-value>)",
+        "300": "oklch(67.57% 0.1254 var(--primary-hue) / <alpha-value>)",
+        "400": "oklch(62.97% 0.1254 var(--primary-hue) / <alpha-value>)",
+        "500": "oklch(51.08% 0.1017 var(--primary-hue) / <alpha-value>)",
+        "600": "oklch(41.54% 0.0827 var(--primary-hue) / <alpha-value>)",
+        "700": "oklch(33.18% 0.0659 var(--primary-hue) / <alpha-value>)",
+        "800": "oklch(29.27% 0.0581 var(--primary-hue) / <alpha-value>)",
+        "900": "oklch(24.14% 0.0477 var(--primary-hue) / <alpha-value>)",
+        "950": "oklch(20.58% 0.0407 var(--primary-hue) / <alpha-value>)",
       },
       secondary: {
         ...colors.blue,

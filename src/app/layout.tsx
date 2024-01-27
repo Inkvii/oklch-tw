@@ -1,11 +1,7 @@
 import "styles/globals.css"
 import { Inter } from "next/font/google"
 import { ReactNode } from "react"
-import TanstackQueryProvider from "@/library/react-query-utils/TanstackQueryProvider"
-import { getServerSession } from "next-auth"
-import { getTheme } from "@/library/server/theme"
 import { twMerge } from "tailwind-merge"
-import SessionProvider from "components/auth/SessionProvider"
 
 const customFont = Inter({ subsets: ["latin"], variable: "--custom-font" })
 
@@ -15,14 +11,10 @@ export const metadata = {
 }
 
 export default async function RootLayout({ children }: { children: ReactNode }) {
-  const session = await getServerSession()
-  const theme = await getTheme()
   return (
-    <html lang="en" className={twMerge(`${customFont.variable} font-sans`, theme === "dark" && "dark")}>
+    <html lang="en" className={twMerge(`${customFont.variable} font-sans`,)}>
       <body className={"min-w-[320px]"}>
-        <SessionProvider session={session} basePath={`${process.env.NEXT_PUBLIC_BASE_PATH}/api/auth`}>
-          <TanstackQueryProvider>{children}</TanstackQueryProvider>
-        </SessionProvider>
+      {children}
       </body>
     </html>
   )
