@@ -4,44 +4,106 @@
 
 @layer base {
     :root {
-        /*--primary-hue: 230*/
-        --primary-hue: 245
+        --primary-hue: 245;
+        --secondary-hue: 133;
+        /*This hue will be used by components to easily change hue color*/
+        --hue: var(--primary-hue)
+    }
+
+    * {
+        @apply outline-none text-hue-900/70 dark:text-hue-50/70;
     }
 
     body {
-        @apply bg-background dark:bg-background-dark text-typography-primary/70 dark:text-typography-primary-dark/60
+        @apply bg-background dark:bg-background-dark
     }
 
     h1 {
-        @apply text-4xl
+        @apply text-4xl text-hue-900/80 dark:text-hue-50
     }
 
     h2 {
-        @apply  text-2xl
+        @apply text-2xl text-hue-900/70 dark:text-hue-50/95
     }
 
     h3 {
-        @apply text-xl
+        @apply text-xl text-hue-900/70 dark:text-hue-50/90
     }
 
     h4 {
-        @apply text-lg
+        @apply text-lg text-hue-900/70 dark:text-hue-50/80
     }
-
-    /*h5 {*/
-    /*    @apply text-typography-primary-400 dark:text-typography-primary-600*/
-    /*}*/
-
-    /*p {*/
-    /*    @apply text-typography-primary/70 dark:text-typography-primary-dark/60*/
-    /*}*/
 }
 
 @layer components {
     .button {
-        @apply
-            select-none
-        rounded px-2 py-1 w-fit
+        @apply select-none
+        rounded px-4 py-2 w-fit
         transition-all
+        hover:brightness-90 dark:hover:brightness-110
+        active:brightness-75 dark:active:brightness-125
+        font-semibold text-sm
+        ;
+
+        &.primary {
+            --hue: var(--primary-hue);
+        }
+
+        &.secondary {
+            --hue: var(--secondary-hue);
+        }
+
+        &.solid {
+            @apply bg-hue-400 dark:bg-hue-900
+            border-none
+            ;
+
+            &.theme-1 {
+                @apply bg-hue-400 dark:bg-hue-900
+                text-hue-900/80 dark:text-hue-100/80
+                ;
+            }
+
+            &.theme-2 {
+                @apply bg-hue-500 dark:bg-hue-500
+                text-hue-100/90 dark:text-hue-100
+                ;
+            }
+
+            &.theme-3 {
+                @apply bg-hue-700 dark:bg-hue-300
+                text-hue-100/90 dark:text-hue-950/70
+                ;
+            }
+        }
+
+        &.outline {
+            @apply border-2 bg-transparent
+            border-hue-600 dark:border-hue-400
+            text-typography-primary dark:text-typography-primary-dark/60
+            hover:bg-hue-400/20
+            active:bg-hue-400/30
+            ;
+
+            &.theme-1 {
+                @apply border-hue-300 dark:border-hue-700
+                text-hue-300 dark:text-hue-100/70
+                ;
+            }
+
+            &.theme-2 {
+                @apply border-hue-400 dark:border-hue-500
+                text-hue-400 dark:text-hue-100/80
+                ;
+            }
+
+            &.theme-3 {
+                @apply border-hue-600 dark:border-hue-300
+                text-hue-600 dark:text-hue-100/80
+                ;
+            }
+        }
+
+
     }
 }

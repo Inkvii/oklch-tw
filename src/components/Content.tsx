@@ -14,7 +14,8 @@ export default function Content() {
       </div>
 
       <Syntax />
-      <HueInput />
+      <HueInput cssVariableName={"--primary-hue"} />
+      <HueInput cssVariableName={"--secondary-hue"} />
 
       <div className={"grid grid-fit-20 gap-4"}>
         <Card
@@ -25,7 +26,8 @@ export default function Content() {
         <Card
           title={"Call to action"}
           description={"Hello there how is it going?"}
-          className={"bg-primary-200 dark:bg-primary-800 border border-primary-300 dark:border-primary-700"}
+          className={"bg-hue-200 dark:bg-hue-800 border border-hue-300 dark:border-hue-700"}
+          style={{ "--hue": "var(--secondary-hue)" } as React.CSSProperties}
         />
       </div>
       <h3>Header 3</h3>

@@ -2,17 +2,17 @@
 
 import { useEffect, useState } from "react"
 
-export default function HueInput() {
+export default function HueInput(props: { cssVariableName: string }) {
   const [hue, setHue] = useState<string>("0")
 
   useEffect(() => {
-    const value = getComputedStyle(document.documentElement).getPropertyValue("--primary-hue")
+    const value = getComputedStyle(document.documentElement).getPropertyValue(props.cssVariableName)
     setHue(value)
   }, [])
 
   return (
     <fieldset className={"flex flex-col"}>
-      <label>Change theme just by moving hue</label>
+      <label>Change {props.cssVariableName} just by moving hue</label>
       <input
         type={"range"}
         min={0}
@@ -23,7 +23,7 @@ export default function HueInput() {
         onChange={(e) => {
           const hue = e.target.value
           setHue(hue)
-          document.documentElement.style.setProperty("--primary-hue", hue)
+          document.documentElement.style.setProperty(props.cssVariableName, hue)
         }}
       />
       <datalist

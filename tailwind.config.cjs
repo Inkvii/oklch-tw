@@ -22,8 +22,21 @@ const colorsThemePreset = {
         dark: "oklch(20% 0.039 var(--primary-hue) / <alpha-value>)",
       },
       neutral: colors.neutral,
+      hue: {
+        "50": "oklch(87.32% 0.0776 var(--hue) / <alpha-value>)",
+        "100": "oklch(83.56% 0.0973 var(--hue) / <alpha-value>)",
+        "200": "oklch(80.01% 0.1254 var(--hue) / <alpha-value>)",
+        "300": "oklch(67.57% 0.1254 var(--hue) / <alpha-value>)",
+        "400": "oklch(62.97% 0.1254 var(--hue) / <alpha-value>)",
+        "500": "oklch(51.08% 0.1017 var(--hue) / <alpha-value>)",
+        "600": "oklch(41.54% 0.0827 var(--hue) / <alpha-value>)",
+        "700": "oklch(33.18% 0.0659 var(--hue) / <alpha-value>)",
+        "800": "oklch(29.27% 0.0581 var(--hue) / <alpha-value>)",
+        "900": "oklch(24.14% 0.0477 var(--hue) / <alpha-value>)",
+        "950": "oklch(20.58% 0.0407 var(--hue) / <alpha-value>)",
+      },
       primary: {
-        "50":  "oklch(87.32% 0.0776 var(--primary-hue) / <alpha-value>)",
+        "50": "oklch(87.32% 0.0776 var(--primary-hue) / <alpha-value>)",
         "100": "oklch(83.56% 0.0973 var(--primary-hue) / <alpha-value>)",
         "200": "oklch(80.01% 0.1254 var(--primary-hue) / <alpha-value>)",
         "300": "oklch(67.57% 0.1254 var(--primary-hue) / <alpha-value>)",
@@ -36,8 +49,18 @@ const colorsThemePreset = {
         "950": "oklch(20.58% 0.0407 var(--primary-hue) / <alpha-value>)",
       },
       secondary: {
-        ...colors.blue,
-        dark: colors.blue,
+        "50": "oklch(87.32% 0.0776 var(--secondary-hue) / <alpha-value>)",
+        "100": "oklch(83.56% 0.0973 var(--secondary-hue) / <alpha-value>)",
+        "200": "oklch(80.01% 0.1254 var(--secondary-hue) / <alpha-value>)",
+        "300": "oklch(67.57% 0.1254 var(--secondary-hue) / <alpha-value>)",
+        "400": "oklch(62.97% 0.1254 var(--secondary-hue) / <alpha-value>)",
+        "500": "oklch(51.08% 0.1017 var(--secondary-hue) / <alpha-value>)",
+        "600": "oklch(41.54% 0.0827 var(--secondary-hue) / <alpha-value>)",
+        "700": "oklch(33.18% 0.0659 var(--secondary-hue) / <alpha-value>)",
+        "800": "oklch(29.27% 0.0581 var(--secondary-hue) / <alpha-value>)",
+        "900": "oklch(24.14% 0.0477 var(--secondary-hue) / <alpha-value>)",
+        "950": "oklch(20.58% 0.0407 var(--secondary-hue) / <alpha-value>)",
+
       },
       info: {
         ...colors.neutral,
@@ -134,14 +157,9 @@ module.exports = {
     customPreset,
   ],
   content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx}",
-    "./src/components/**/*.{js,ts,jsx,tsx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/stories/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/library/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/**/*.{js,ts,jsx,tsx}",
   ],
   plugins: [
-    require("@tailwindcss/forms"),
     require("@tailwindcss/container-queries"),
     plugin(function({ addVariant }) {
       addVariant("child", "& > :is(*)")
