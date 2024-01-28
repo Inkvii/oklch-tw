@@ -1,9 +1,12 @@
 "use client"
 
 import { useEffect, useState } from "react"
+import useHue from "components/useHue"
+import { HueVariable } from "components/HueVariable"
 
-export default function HueInput(props: { cssVariableName: string }) {
+export default function HueInput(props: { cssVariableName: string; hue: HueVariable }) {
   const [hue, setHue] = useState<string>("0")
+  const style = useHue(props.hue)
 
   useEffect(() => {
     const value = getComputedStyle(document.documentElement).getPropertyValue(props.cssVariableName)
@@ -18,20 +21,16 @@ export default function HueInput(props: { cssVariableName: string }) {
         min={0}
         max={360}
         list={"markers"}
-        className={"accent-primary-400 dark:accent-primary-400"}
+        className={"accent-hue-400 dark:accent-hue-400"}
         value={hue}
         onChange={(e) => {
           const hue = e.target.value
           setHue(hue)
           document.documentElement.style.setProperty(props.cssVariableName, hue)
         }}
+        style={style}
       />
-      <datalist
-        id={"markers"}
-        className={
-          "flex justify-between text-typography-primary-50 dark:text-typography-primary-950 accent-primary-400"
-        }
-      >
+      <datalist id={"markers"} className={"flex justify-between"}>
         <option value={0} label={"red"} />
         <option value={60} label={"orange"} />
         <option value={120} label={"green"} />

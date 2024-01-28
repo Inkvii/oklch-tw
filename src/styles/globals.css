@@ -45,14 +45,6 @@
         font-semibold text-sm
         ;
 
-        &.primary {
-            --hue: var(--primary-hue);
-        }
-
-        &.secondary {
-            --hue: var(--secondary-hue);
-        }
-
         &.solid {
             @apply bg-hue-400 dark:bg-hue-900
             border-none
@@ -79,21 +71,19 @@
 
         &.outline {
             @apply border-2 bg-transparent
-            border-hue-600 dark:border-hue-400
-            text-typography-primary dark:text-typography-primary-dark/60
             hover:bg-hue-400/20
             active:bg-hue-400/30
             ;
 
             &.theme-1 {
-                @apply border-hue-300 dark:border-hue-700
-                text-hue-300 dark:text-hue-100/70
+                @apply border-hue-200 dark:border-hue-700
+                text-hue-500 dark:text-hue-100/70
                 ;
             }
 
             &.theme-2 {
                 @apply border-hue-400 dark:border-hue-500
-                text-hue-400 dark:text-hue-100/80
+                text-hue-500 dark:text-hue-100/80
                 ;
             }
 

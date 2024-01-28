@@ -1,6 +1,8 @@
 import HueInput from "components/HueInput"
 import Syntax from "components/Syntax"
 import Card from "components/Card"
+import { twMerge } from "tailwind-merge"
+import Button from "components/Button"
 
 export default function Content() {
   return (
@@ -14,37 +16,36 @@ export default function Content() {
       </div>
 
       <Syntax />
-      <HueInput cssVariableName={"--primary-hue"} />
-      <HueInput cssVariableName={"--secondary-hue"} />
+      <HueInput cssVariableName={"--primary-hue"} hue={"primary"} />
+      <HueInput cssVariableName={"--secondary-hue"} hue={"secondary"} />
 
-      <div className={"grid grid-fit-20 gap-4"}>
+      <div className={"grid grid-fit-20 gap-4 pt-8"}>
+        <Card title={"Standard primary card"} description={"Uses default primary hue"} hue={"primary"} />
+        <Card title={"Standard secondary card"} description={"Uses default secondary hue"} hue={"secondary"} />
         <Card
-          title={"Call to action"}
-          description={"Hello there how is it going?"}
-          className={"bg-primary-200 dark:bg-primary-800 border border-primary-300 dark:border-primary-700"}
+          title={"Using custom classnames"}
+          description={"Uses primary hue but changes background to gray color"}
+          hue={"primary"}
+          className={twMerge(
+            "child:text-neutral-700 dark:child:text-neutral-100",
+            "bg-neutral-200 dark:bg-neutral-950 ",
+            "border-neutral-400 dark:border-neutral-800"
+          )}
         />
-        <Card
-          title={"Call to action"}
-          description={"Hello there how is it going?"}
-          className={"bg-hue-200 dark:bg-hue-800 border border-hue-300 dark:border-hue-700"}
-          style={{ "--hue": "var(--secondary-hue)" } as React.CSSProperties}
-        />
+        <Card title={"Card with children"} description={"To showcase outline buttons"} hue={"primary"}>
+          <div className={"flex gap-2 child:grow"}>
+            <Button theme={"theme-2"} variant={"outline"} color={"primary"}>
+              Standard theme
+            </Button>
+            <Button theme={"theme-2"} variant={"outline"} color={"secondary"}>
+              More
+            </Button>
+            <Button theme={"theme-3"} variant={"outline"}>
+              Most
+            </Button>
+          </div>
+        </Card>
       </div>
-      <h3>Header 3</h3>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. A adipisci animi dolores eius hic, incidunt quas quis
-        sed veniam vitae.
-      </p>
-      <h4>Header 4</h4>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. A adipisci animi dolores eius hic, incidunt quas quis
-        sed veniam vitae.
-      </p>
-      <h5>Header 5</h5>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. A adipisci animi dolores eius hic, incidunt quas quis
-        sed veniam vitae.
-      </p>
     </div>
   )
 }

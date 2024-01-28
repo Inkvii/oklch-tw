@@ -1,0 +1,1 @@
+export type HueVariable = "primary" | "secondary"
