@@ -10,18 +10,8 @@ const colorsThemePreset = {
     colors: {
       typography: {
         primary: {
-
-          "50": "oklch(44.18% 0.0444 var(--primary-hue) / <alpha-value>)",
-          "100": "oklch(37.66% 0.0444 var(--primary-hue) / <alpha-value>)",
-          "200": "oklch(30.75% 0.0444 var(--primary-hue) / <alpha-value>)",
-          "300": "oklch(27% 0.0444 var(--primary-hue) / <alpha-value>)",
-          "400": "oklch(24.83% 0.0444 var(--primary-hue) / <alpha-value>)",
-          "500": "oklch(92.61% 0.0436 var(--primary-hue) / <alpha-value>)",
-          "600": "oklch(82.04% 0.1123 var(--primary-hue) / <alpha-value>)",
-          "700": "oklch(72.74% 0.0871 var(--primary-hue) / <alpha-value>)",
-          "800": "oklch(73.4% 0.0871 var(--primary-hue) / <alpha-value>)",
-          "900": "oklch(75.66% 0.0871 var(--primary-hue) / <alpha-value>)",
-          "950":  "oklch(80.1% 0.0871 var(--primary-hue) / <alpha-value>)",
+          DEFAULT: "oklch(20.18% 0.0444 var(--primary-hue) / <alpha-value>)",
+          "dark": "oklch(95.1% 0.0871 var(--primary-hue) / <alpha-value>)",
         },
         body: { DEFAULT: colors.neutral["700"], dark: colors.neutral["200"] },
         header: { DEFAULT: colors.neutral["900"], dark: colors.neutral["50"] },
